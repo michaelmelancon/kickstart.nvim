@@ -415,7 +415,6 @@ require('lazy').setup({
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-      'neubaner/roslyn.nvim',
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -610,11 +609,6 @@ require('lazy').setup({
         'stylua', -- Used to format Lua code
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-      require('roslyn').setup {
-        roslyn_version = '4.11.0-3.24307.2+f0a5241acc0a87edc69f342664c9ed1945fcf3dc',
-        capabilities = capabilities,
-        on_attach = function() end,
-      }
 
       require('mason-lspconfig').setup {
         handlers = {
