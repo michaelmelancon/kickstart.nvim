@@ -194,6 +194,11 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+vim.keymap.set('n', '<M-up>', ':m -2<CR>', { desc = 'Move current line up' })
+vim.keymap.set('n', '<M-down>', ':m +1<CR>', { desc = 'Move current line down' })
+vim.keymap.set('n', '<M-j>', ':m -2<CR>', { desc = 'Move current line up' })
+vim.keymap.set('n', '<M-k>', ':m +1<CR>', { desc = 'Move current line down' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -552,7 +557,7 @@ require('lazy').setup({
           -- This may be unwanted, since they displace some of your code
           if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
             map('<leader>th', function()
-              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0}))
+              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = 0 })
             end, '[T]oggle Inlay [H]ints')
           end
         end,

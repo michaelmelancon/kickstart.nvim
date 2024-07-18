@@ -17,6 +17,31 @@ return {
     opts = {},
   },
   {
+    'nvim-neotest/neotest',
+    dependencies = {
+      'nvim-neotest/nvim-nio',
+      'nvim-lua/plenary.nvim',
+      'antoinemadec/FixCursorHold.nvim',
+      'nvim-treesitter/nvim-treesitter',
+      'Issafalcon/neotest-dotnet',
+    },
+    config = function()
+      require('neotest').setup {
+        adapters = {
+          require 'neotest-dotnet',
+        },
+      }
+    end,
+  },
+  {
+    'dnlhc/glance.nvim',
+    config = function()
+      require('glance').setup {
+        -- your configuration
+      }
+    end,
+  },
+  --[[{
     'OXY2DEV/markview.nvim',
     ft = 'markdown',
 
@@ -27,5 +52,6 @@ return {
 
       'nvim-tree/nvim-web-devicons',
     },
-  },
+  },]]
+  --
 }
