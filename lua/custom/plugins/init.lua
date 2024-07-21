@@ -7,9 +7,6 @@ return {
     'ray-x/lsp_signature.nvim',
     event = 'VeryLazy',
     opts = {},
-    config = function(_, opts)
-      require('lsp_signature').setup(opts)
-    end,
   },
   {
     'folke/trouble.nvim',
@@ -26,32 +23,32 @@ return {
       'Issafalcon/neotest-dotnet',
     },
     config = function()
-      require('neotest').setup {
-        adapters = {
-          require 'neotest-dotnet',
-        },
-      }
+      require('neotest').setup { adapters = { require 'neotest-dotnet' } }
     end,
   },
   {
     'dnlhc/glance.nvim',
-    config = function()
-      require('glance').setup {
-        -- your configuration
-      }
-    end,
+    opts = {},
   },
-  --[[{
+  {
     'OXY2DEV/markview.nvim',
     ft = 'markdown',
-
+    opts = {},
     dependencies = {
       -- You may not need this if you don't lazy load
       -- Or if the parsers are in your $RUNTIMEPATH
       'nvim-treesitter/nvim-treesitter',
-
       'nvim-tree/nvim-web-devicons',
     },
-  },]]
-  --
+  },
+  {
+    'NeogitOrg/neogit',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'sindrets/diffview.nvim',
+
+      'nvim-telescope/telescope.nvim',
+    },
+    config = true,
+  },
 }
