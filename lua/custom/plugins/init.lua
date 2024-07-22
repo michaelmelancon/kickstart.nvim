@@ -24,7 +24,7 @@ return {
     },
     opts = {
       adapters = {
-        require 'neotest-dotnet',
+        'neotest-dotnet',
       },
     },
   },
