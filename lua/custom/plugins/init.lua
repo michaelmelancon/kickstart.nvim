@@ -22,9 +22,11 @@ return {
       'nvim-treesitter/nvim-treesitter',
       'Issafalcon/neotest-dotnet',
     },
-    config = function()
-      require('neotest').setup { adapters = { require 'neotest-dotnet' } }
-    end,
+    opts = {
+      adapters = {
+        require 'neotest-dotnet',
+      },
+    },
   },
   {
     'dnlhc/glance.nvim',
@@ -35,8 +37,6 @@ return {
     ft = 'markdown',
     opts = {},
     dependencies = {
-      -- You may not need this if you don't lazy load
-      -- Or if the parsers are in your $RUNTIMEPATH
       'nvim-treesitter/nvim-treesitter',
       'nvim-tree/nvim-web-devicons',
     },
@@ -46,9 +46,14 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'sindrets/diffview.nvim',
-
       'nvim-telescope/telescope.nvim',
     },
     config = true,
+  },
+  {
+    'camspiers/luarocks',
+    dependencies = {
+      'rcarriga/nvim-notify', -- Optional dependency
+    },
   },
 }
