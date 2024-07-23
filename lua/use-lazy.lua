@@ -9,9 +9,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- [[ Configure and install plugins ]]
 --
-require('lazy').setup({
-  import = 'lazy.plugins',
-}, {
+require('lazy').setup({ import = 'lazy.plugins' }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
       cmd = '⌘',
